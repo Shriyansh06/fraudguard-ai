@@ -1,0 +1,5 @@
+{
+  "threshold": 0.8772642612457275,
+  "method": "max_f1_on_validation",
+  "champion_model": "xgboost"
+}

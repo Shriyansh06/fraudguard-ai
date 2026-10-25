@@ -1,6 +1,6 @@
 # FraudGuard AI
 
-**Academic Machine Learning Project — Credit Card Fraud Detection**
+**Academic Machine Learning Project ? Credit Card Fraud Detection**
 
 A complete, reproducible ML system for detecting fraudulent credit card transactions. Implements three classifiers (Logistic Regression, Random Forest, XGBoost), rigorous evaluation, SHAP explainability, and a professional Streamlit dashboard.
 
@@ -9,9 +9,9 @@ A complete, reproducible ML system for detecting fraudulent credit card transact
 ## Dataset
 
 **ULB Credit Card Fraud Detection**
-- Source: [Kaggle — mlg-ulb/creditcardfraud](https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud)
-- Size: 284,807 rows × 31 columns
-- Features: `Time`, `Amount`, `V1`–`V28` (PCA-transformed, anonymized), `Class`
+- Source: [Kaggle ? mlg-ulb/creditcardfraud](https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud)
+- Size: 284,807 rows ? 31 columns
+- Features: `Time`, `Amount`, `V1`?`V28` (PCA-transformed, anonymized), `Class`
 - Target: `Class` (0 = legitimate, 1 = fraud)
 - Fraud rate: 0.172% (492 fraud / 284,315 legitimate)
 
@@ -26,51 +26,51 @@ A complete, reproducible ML system for detecting fraudulent credit card transact
 
 ```
 fraudguard-ai/
-├── app.py                    # Streamlit main entry point
-├── pages/
-│   ├── 01_Overview.py        # Dataset stats and EDA charts
-│   ├── 02_Fraud_Prediction.py
-│   ├── 03_Model_Comparison.py
-│   ├── 04_Explainable_AI.py
-│   └── 05_Transaction_Monitor.py
-├── src/
-│   ├── config.py             # Paths, constants, feature lists
-│   ├── data_loader.py        # Load, validate, split dataset
-│   ├── preprocessing.py      # sklearn ColumnTransformer pipelines
-│   ├── models.py             # Model factory functions
-│   ├── evaluation.py         # Metrics, curves, persistence
-│   ├── explainability.py     # SHAP explainer selection
-│   └── inference.py          # Load model, score transactions
-├── scripts/
-│   ├── run_eda.py            # EDA → results/eda/
-│   ├── train.py              # Full training pipeline
-│   ├── evaluate.py           # Post-training chart generation
-│   ├── run_shap.py           # SHAP global importance
-│   └── create_demo_csv.py    # Small demo CSV for Streamlit
-├── notebooks/
-│   ├── 01_eda.py             # Interactive EDA
-│   ├── 02_preprocessing.py   # Pipeline demo and leakage proof
-│   ├── 03_models.py          # Model comparison
-│   └── 05_explainability.py  # SHAP walkthrough
-├── data/
-│   ├── creditcard.csv        # [NOT COMMITTED — download from Kaggle]
-│   └── demo_transactions.csv # Small sample (committed)
-├── models/                   # Saved pipeline artifacts (.joblib)
-├── results/
-│   ├── eda/                  # EDA charts + summary JSON
-│   ├── evaluation/           # Evaluation charts
-│   └── shap/                 # SHAP charts and explainer
-├── tests/
-│   ├── test_preprocessing.py
-│   ├── test_data_loader.py
-│   ├── test_inference.py
-│   ├── test_evaluation.py
-│   └── test_csv_upload.py
-├── docs/
-│   └── report_outline.md     # College report structure
-├── requirements.txt
-├── pyproject.toml
-└── .streamlit/config.toml
+??? app.py                    # Streamlit main entry point
+??? pages/
+?   ??? 01_Overview.py        # Dataset stats and EDA charts
+?   ??? 02_Fraud_Prediction.py
+?   ??? 03_Model_Comparison.py
+?   ??? 04_Explainable_AI.py
+?   ??? 05_Transaction_Monitor.py
+??? src/
+?   ??? config.py             # Paths, constants, feature lists
+?   ??? data_loader.py        # Load, validate, split dataset
+?   ??? preprocessing.py      # sklearn ColumnTransformer pipelines
+?   ??? models.py             # Model factory functions
+?   ??? evaluation.py         # Metrics, curves, persistence
+?   ??? explainability.py     # SHAP explainer selection
+?   ??? inference.py          # Load model, score transactions
+??? scripts/
+?   ??? run_eda.py            # EDA ? results/eda/
+?   ??? train.py              # Full training pipeline
+?   ??? evaluate.py           # Post-training chart generation
+?   ??? run_shap.py           # SHAP global importance
+?   ??? create_demo_csv.py    # Small demo CSV for Streamlit
+??? notebooks/
+?   ??? 01_eda.py             # Interactive EDA
+?   ??? 02_preprocessing.py   # Pipeline demo and leakage proof
+?   ??? 03_models.py          # Model comparison
+?   ??? 05_explainability.py  # SHAP walkthrough
+??? data/
+?   ??? creditcard.csv        # [NOT COMMITTED ? download from Kaggle]
+?   ??? demo_transactions.csv # Small sample (committed)
+??? models/                   # Saved pipeline artifacts (.joblib)
+??? results/
+?   ??? eda/                  # EDA charts + summary JSON
+?   ??? evaluation/           # Evaluation charts
+?   ??? shap/                 # SHAP charts and explainer
+??? tests/
+?   ??? test_preprocessing.py
+?   ??? test_data_loader.py
+?   ??? test_inference.py
+?   ??? test_evaluation.py
+?   ??? test_csv_upload.py
+??? docs/
+?   ??? report_outline.md     # College report structure
+??? requirements.txt
+??? pyproject.toml
+??? .streamlit/config.toml
 ```
 
 ---
@@ -118,7 +118,7 @@ EDA summaries and plots, train/test metric tables, confusion-matrix tables,
 ROC curves, and comparison graphs to `results/model_comparison_80_20/`.
 Trained pipelines are saved separately in `models/comparison_80_20/`.
 
-MAE, MSE, RMSE, and R² are calculated by comparing each classifier's
+MAE, MSE, RMSE, and R? are calculated by comparing each classifier's
 fraud-risk score with the binary target; they are supplementary score-error
 metrics, not results from a separate Linear Regression model. SVM uses a
 linear support vector classifier for practical runtime on the full dataset.
@@ -126,7 +126,7 @@ linear support vector classifier for practical runtime on the full dataset.
 ### Evaluate a supplied labeled test CSV
 
 To train the comparison classifiers on `data/creditcard.csv` and evaluate a
-separate labeled CSV (with the same `Time`, `Amount`, `V1`–`V28`, and `Class`
+separate labeled CSV (with the same `Time`, `Amount`, `V1`?`V28`, and `Class`
 columns), run:
 
 ```bash
@@ -149,13 +149,13 @@ python scripts/run_shap.py       # Step 4: SHAP global importance
 python scripts/create_demo_csv.py  # Step 5: Demo transactions for Streamlit
 ```
 
-### Quick development mode (5% sample — non-final results)
+### Quick development mode (5% sample ? non-final results)
 
 ```bash
 python scripts/train.py --quick
 ```
 
-> **Warning**: `--quick` results are labelled `[QUICK-DEV — non-final results]`
+> **Warning**: `--quick` results are labelled `[QUICK-DEV ? non-final results]`
 > and must NOT be used in the final submission.
 
 ---
@@ -192,7 +192,7 @@ pytest
 pytest --cov=src tests/
 ```
 
-The test suite does NOT require the full dataset — it uses synthetic toy data.
+The test suite does NOT require the full dataset ? it uses synthetic toy data.
 
 ---
 
@@ -208,7 +208,7 @@ For deployment without the 150 MB dataset:
 2. Do NOT commit:
    - `data/creditcard.csv` (too large; download from Kaggle)
 
-3. The Streamlit app loads saved artifacts — it never retrains.
+3. The Streamlit app loads saved artifacts ? it never retrains.
 
 ---
 

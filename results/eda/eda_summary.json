@@ -1,0 +1,62 @@
+{
+  "n_rows": 284807,
+  "n_cols": 31,
+  "n_duplicates": 1081,
+  "n_missing": 0,
+  "fraud_count": 492,
+  "legit_count": 284315,
+  "fraud_pct": 0.1727,
+  "imbalance_ratio": 577.9,
+  "features": [
+    "Time",
+    "Amount",
+    "V1",
+    "V2",
+    "V3",
+    "V4",
+    "V5",
+    "V6",
+    "V7",
+    "V8",
+    "V9",
+    "V10",
+    "V11",
+    "V12",
+    "V13",
+    "V14",
+    "V15",
+    "V16",
+    "V17",
+    "V18",
+    "V19",
+    "V20",
+    "V21",
+    "V22",
+    "V23",
+    "V24",
+    "V25",
+    "V26",
+    "V27",
+    "V28"
+  ],
+  "target": "Class",
+  "observations": {
+    "class_imbalance": "The dataset is highly imbalanced: only 0.173% of transactions are fraudulent (492 out of 284,807). Standard accuracy is a misleading metric; Area under the Precision-Recall curve (AUPRC) is more informative.",
+    "missing_data": "No missing values detected. The dataset is complete, which simplifies preprocessing.",
+    "duplicates": "Found 1081 duplicate rows. Duplicates are removed before modelling to avoid data leakage between splits."
+  },
+  "amount_stats": {
+    "legitimate": {
+      "mean": 88.29,
+      "median": 22.0,
+      "std": 250.11,
+      "max": 25691.16
+    },
+    "fraud": {
+      "mean": 122.21,
+      "median": 9.25,
+      "std": 256.68,
+      "max": 2125.87
+    }
+  }
+}

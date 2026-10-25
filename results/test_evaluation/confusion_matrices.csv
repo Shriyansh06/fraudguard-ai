@@ -1,0 +1,9 @@
+model,TN,FP,FN,TP
+Logistic Regression,55393,1471,8,90
+Decision Tree,56386,478,14,84
+Random Forest,56861,3,16,82
+SVM,55603,1261,8,90
+K-Nearest Neighbors,56860,4,14,84
+Naive Bayes,55442,1422,14,84
+Gradient Boosting,56847,17,43,55
+XGBoost,56833,31,9,89
