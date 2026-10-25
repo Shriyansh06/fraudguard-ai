@@ -1,0 +1,245 @@
+{
+  "logistic_regression": {
+    "baseline": {
+      "validation": {
+        "model": "logistic_regression",
+        "split": "validation",
+        "metrics": {
+          "accuracy": 0.9721563006649593,
+          "precision": 0.050806451612903224,
+          "recall": 0.8873239436619719,
+          "f1": 0.09610983981693363,
+          "roc_auc": 0.9718062896300794,
+          "average_precision": 0.6970029894732384,
+          "threshold": 0.5,
+          "prevalence": 0.0016682722808336662,
+          "n_samples": 42559,
+          "n_positives": 71,
+          "n_negatives": 42488
+        },
+        "confusion_matrix": [
+          [
+            41311,
+            1177
+          ],
+          [
+            8,
+            63
+          ]
+        ]
+      },
+      "test": {
+        "model": "logistic_regression",
+        "split": "test",
+        "metrics": {
+          "accuracy": 0.9744354895556756,
+          "precision": 0.05511811023622047,
+          "recall": 0.8873239436619719,
+          "f1": 0.10378912685337727,
+          "roc_auc": 0.9608718020796593,
+          "average_precision": 0.6809764721112809,
+          "threshold": 0.5,
+          "prevalence": 0.0016682722808336662,
+          "n_samples": 42559,
+          "n_positives": 71,
+          "n_negatives": 42488
+        },
+        "confusion_matrix": [
+          [
+            41408,
+            1080
+          ],
+          [
+            8,
+            63
+          ]
+        ]
+      }
+    }
+  },
+  "random_forest": {
+    "baseline": {
+      "validation": {
+        "model": "random_forest",
+        "split": "validation",
+        "metrics": {
+          "accuracy": 0.9995065673535563,
+          "precision": 1.0,
+          "recall": 0.704225352112676,
+          "f1": 0.8264462809917356,
+          "roc_auc": 0.9405275325460578,
+          "average_precision": 0.8496672130735222,
+          "threshold": 0.5,
+          "prevalence": 0.0016682722808336662,
+          "n_samples": 42559,
+          "n_positives": 71,
+          "n_negatives": 42488
+        },
+        "confusion_matrix": [
+          [
+            42488,
+            0
+          ],
+          [
+            21,
+            50
+          ]
+        ]
+      },
+      "test": {
+        "model": "random_forest",
+        "split": "test",
+        "metrics": {
+          "accuracy": 0.9994830705608685,
+          "precision": 0.9298245614035088,
+          "recall": 0.7464788732394366,
+          "f1": 0.828125,
+          "roc_auc": 0.9540496604177883,
+          "average_precision": 0.8048601660810246,
+          "threshold": 0.5,
+          "prevalence": 0.0016682722808336662,
+          "n_samples": 42559,
+          "n_positives": 71,
+          "n_negatives": 42488
+        },
+        "confusion_matrix": [
+          [
+            42484,
+            4
+          ],
+          [
+            18,
+            53
+          ]
+        ]
+      }
+    }
+  },
+  "xgboost": {
+    "baseline": {
+      "validation": {
+        "model": "xgboost",
+        "split": "validation",
+        "metrics": {
+          "accuracy": 0.999530064146244,
+          "precision": 0.9473684210526315,
+          "recall": 0.7605633802816901,
+          "f1": 0.84375,
+          "roc_auc": 0.9795587685404463,
+          "average_precision": 0.853878662489012,
+          "threshold": 0.5,
+          "prevalence": 0.0016682722808336662,
+          "n_samples": 42559,
+          "n_positives": 71,
+          "n_negatives": 42488
+        },
+        "confusion_matrix": [
+          [
+            42485,
+            3
+          ],
+          [
+            17,
+            54
+          ]
+        ]
+      },
+      "test": {
+        "model": "xgboost",
+        "split": "test",
+        "metrics": {
+          "accuracy": 0.9994595737681806,
+          "precision": 0.875,
+          "recall": 0.7887323943661971,
+          "f1": 0.8296296296296296,
+          "roc_auc": 0.9695658890264957,
+          "average_precision": 0.8043202915561644,
+          "threshold": 0.5,
+          "prevalence": 0.0016682722808336662,
+          "n_samples": 42559,
+          "n_positives": 71,
+          "n_negatives": 42488
+        },
+        "confusion_matrix": [
+          [
+            42480,
+            8
+          ],
+          [
+            15,
+            56
+          ]
+        ]
+      }
+    }
+  },
+  "champion": {
+    "name": "xgboost",
+    "used_tuned_model": false,
+    "validation": {
+      "model": "xgboost_baseline",
+      "split": "validation",
+      "metrics": {
+        "accuracy": 0.9995770577316196,
+        "precision": 1.0,
+        "recall": 0.7464788732394366,
+        "f1": 0.8548387096774194,
+        "roc_auc": 0.9795587685404463,
+        "average_precision": 0.853878662489012,
+        "threshold": 0.8772642612457275,
+        "prevalence": 0.0016682722808336662,
+        "n_samples": 42559,
+        "n_positives": 71,
+        "n_negatives": 42488
+      },
+      "confusion_matrix": [
+        [
+          42488,
+          0
+        ],
+        [
+          18,
+          53
+        ]
+      ]
+    },
+    "test": {
+      "model": "xgboost_baseline",
+      "split": "test",
+      "metrics": {
+        "accuracy": 0.9995065673535563,
+        "precision": 0.9310344827586207,
+        "recall": 0.7605633802816901,
+        "f1": 0.8372093023255814,
+        "roc_auc": 0.9695658890264957,
+        "average_precision": 0.8043202915561644,
+        "threshold": 0.8772642612457275,
+        "prevalence": 0.0016682722808336662,
+        "n_samples": 42559,
+        "n_positives": 71,
+        "n_negatives": 42488
+      },
+      "confusion_matrix": [
+        [
+          42484,
+          4
+        ],
+        [
+          17,
+          54
+        ]
+      ]
+    },
+    "threshold": 0.8772642612457275,
+    "tuning_best_params": {
+      "classifier__subsample": 0.6,
+      "classifier__n_estimators": 300,
+      "classifier__min_child_weight": 1,
+      "classifier__max_depth": 8,
+      "classifier__learning_rate": 0.1,
+      "classifier__colsample_bytree": 1.0
+    },
+    "baseline_val_ap": 0.853878662489012,
+    "tuned_val_ap": 0.8441339661738626
+  }
+}

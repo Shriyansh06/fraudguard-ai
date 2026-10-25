@@ -62,6 +62,7 @@ ARTIFACT_PATHS: dict[str, Path] = {
 }
 CHAMPION_ARTIFACT_PATH: Path = MODELS_DIR / f"{CHAMPION_MODEL_NAME}_pipeline.joblib"
 METRICS_PATH: Path = RESULTS_DIR / "metrics.json"
+DASHBOARD_METRICS_PATH: Path = RESULTS_DIR / "metrics_dashboard.json"
 THRESHOLD_PATH: Path = MODELS_DIR / "champion_threshold.json"
 FEATURE_SCHEMA_PATH: Path = MODELS_DIR / "feature_schema.json"
 MODEL_META_PATH: Path = MODELS_DIR / "model_metadata.json"

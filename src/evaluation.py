@@ -23,7 +23,7 @@ from sklearn.metrics import (
     roc_curve,
 )
 
-from src.config import RESULTS_DIR
+from src.config import DASHBOARD_METRICS_PATH, RESULTS_DIR
 
 
 # ---------------------------------------------------------------------------
@@ -137,10 +137,29 @@ def select_threshold_max_f1(
 # ---------------------------------------------------------------------------
 
 def save_metrics(all_metrics: dict[str, Any], path: Path | None = None) -> None:
-    """Serialise the full metrics dictionary to JSON."""
+    """Save full metrics and a compact copy for the Streamlit dashboard."""
     save_path = path or (RESULTS_DIR / "metrics.json")
     save_path.parent.mkdir(parents=True, exist_ok=True)
     save_path.write_text(json.dumps(all_metrics, indent=2))
+    dashboard_path = (
+        DASHBOARD_METRICS_PATH
+        if path is None
+        else path.with_name("metrics_dashboard.json")
+    )
+    dashboard_path.write_text(json.dumps(_without_curve_data(all_metrics), indent=2))
+
+
+def _without_curve_data(value: Any) -> Any:
+    """Drop large precomputed curve arrays; the dashboard uses saved chart images."""
+    if isinstance(value, dict):
+        return {
+            key: _without_curve_data(item)
+            for key, item in value.items()
+            if key not in {"roc_curve", "pr_curve"}
+        }
+    if isinstance(value, list):
+        return [_without_curve_data(item) for item in value]
+    return value
 
 
 def load_metrics(path: Path | None = None) -> dict[str, Any]:

@@ -21,7 +21,7 @@ import streamlit as st
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-from src.config import EVAL_RESULTS_DIR, MODEL_NAMES, RESULTS_DIR
+from src.config import DASHBOARD_METRICS_PATH, EVAL_RESULTS_DIR, MODEL_NAMES
 from src.evaluation import load_metrics
 
 st.set_page_config(page_title="Model Comparison ? FraudGuard AI", layout="wide")
@@ -46,7 +46,7 @@ st.markdown("---")
 # ---------------------------------------------------------------------------
 # Load metrics
 # ---------------------------------------------------------------------------
-metrics_path = RESULTS_DIR / "metrics.json"
+metrics_path = DASHBOARD_METRICS_PATH
 if not metrics_path.exists():
     st.error(
         "Metrics file not found. Run the training script first:\n\n"
@@ -55,7 +55,7 @@ if not metrics_path.exists():
     st.stop()
 
 try:
-    metrics = load_metrics()
+    metrics = load_metrics(path=metrics_path)
 except Exception as e:
     st.error(f"Error loading metrics: {e}")
     st.stop()

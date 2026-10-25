@@ -134,7 +134,30 @@ class TestMetricsPersistence:
             path = Path(tmpdir) / "metrics.json"
             save_metrics(metrics_data, path=path)
             loaded = load_metrics(path=path)
+            dashboard = json.loads(path.with_name("metrics_dashboard.json").read_text())
         assert "logistic_regression" in loaded
+        assert dashboard == metrics_data
+
+    def test_dashboard_metrics_omit_curve_data(self):
+        metrics_data = {
+            "model": {
+                "test": {
+                    "metrics": {"accuracy": 0.9},
+                    "roc_curve": {"fpr": [0.0, 1.0], "tpr": [0.0, 1.0]},
+                    "pr_curve": {"precision": [1.0], "recall": [0.5]},
+                }
+            }
+        }
+        with tempfile.TemporaryDirectory() as tmpdir:
+            path = Path(tmpdir) / "metrics.json"
+            save_metrics(metrics_data, path=path)
+            dashboard = json.loads(path.with_name("metrics_dashboard.json").read_text())
+            full = json.loads(path.read_text())
+
+        assert dashboard["model"]["test"]["metrics"] == {"accuracy": 0.9}
+        assert "roc_curve" not in dashboard["model"]["test"]
+        assert "pr_curve" not in dashboard["model"]["test"]
+        assert "roc_curve" in full["model"]["test"]
 
     def test_load_missing_raises(self):
         with pytest.raises(FileNotFoundError):

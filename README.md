@@ -181,6 +181,9 @@ results in `results/`. Run the training pipeline first.
 The repository must include the champion model files, `data/demo_transactions.csv`,
 and the `results/` files used by the dashboard. Do not upload either copy of
 `creditcard.csv`; the running app uses the saved artifacts and does not retrain.
+The training pipeline also saves `results/metrics_dashboard.json`, a compact copy
+of the metrics used by the app; full ROC and precision-recall curve arrays are
+omitted because the dashboard displays the pre-rendered evaluation charts.
 
 ---
 
